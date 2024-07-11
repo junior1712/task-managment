@@ -1,8 +1,8 @@
 Task Management Application
-## Project Overview
+## Project Overview 
 The Task Management Application is a small-scale web application built using Laravel 10. It focuses on essential CRUD (Create, Read, Update, Delete) operations for managing tasks, coupled with user authentication. Users can register, log in, and manage their tasks, including creating, reading, updating, and deleting tasks. The application ensures that users remain logged in across different pages and can securely log out when needed.
 
-## Technical Details
+## Technical Details 
 Project Structure
 The project follows the standard Laravel framework structure, which includes controllers, models, views, and routes. Each component has a specific role:
 
@@ -37,7 +37,7 @@ Routes are defined in the routes/web.php file. They map URLs to specific actions
 Validation Rules
 Validation rules are implemented in the controller methods to ensure data integrity. For example, when creating or updating a task, the application checks that the title is provided, the description is not empty, the due date is a valid date, and the status is one of the allowed values (e.g., pending, in-progress, completed).
 
-## Running the Code
+## Running the Code 
 # Prerequisites
 The application was built using the following software:
 Laravel Framework: 10.48.15
@@ -101,19 +101,31 @@ Serve the application: Use Laravel's built-in development server to run the appl
 ## Running the Application with Laragon on localhost
 
 Start Laragon: Launch Laragon and start the necessary services (e.g., Apache and MySQL).
-In laragon open the database and Create a new database call task_managment,update the DB_DATABASE variable in the .env file of the application with the name of the database you created.
-Open the built-in terminal or the GUI in Laragon to run the Laravel development server,once the terminal open you will see the following path directory:C:\laragon\www
-Clone the repository in laragon terminal (C:\laragon\www) :
-git clone https://github.com/yourusername/task-management-app.git
+In laragon open the database and Create a new database with a name of your choice.
+Open the built-in terminal or the GUI in Laragon to run the Laravel development server,once the terminal open you will see the following path directory: C:\laragon\www
+Clone the repository in laragon terminal : C:\laragon\www 
+git clone https://github.com/junior1712/task-managment.git 
+,
 cd task-management-app
+.
+Ensure that your .env file is properly configured with your database. If you don't have a .env file in your project directory, create one by copying the .env.example file in the project directory using the command line below:
+cp .env.example .env
+,
+thi command will create .env file that will help you to config your database.
+update the DB_DATABASE variable in the .env file of the application with the name of the database you created.
+example:DB_DATABASE=task_managment if the database name created was task_managment.
 Install dependencies: Use Composer to install PHP dependencies and npm to install frontend dependencies:
 composer install
 npm install
 npm run dev
 
-Run database migrations: Execute the database migrations to create the necessary tables in your database using the command:php artisan migrate
+Run database migrations: Execute the database migrations to create the necessary tables in your database using the command:
+php artisan migrate
+Make sure you have generated an application key by running the command line:
+php artisan key:generate
 Serve the application:Use Laravel's built-in development server to run the application and access it in your browser by using the command:php artisan serve
 Access the application: Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000).
+make sure to run again npm run dev after serving the application to be able to use frontend depencies with the registration form.
 
 ## Additional Features
 Pagination: The task list view includes pagination to efficiently handle multiple tasks and improve the user experience.
@@ -128,7 +140,14 @@ Encryption: Encrypting sensitive data using a unique application key.
 Database Security: Using prepared statements and secure database migrations.
 Error Handling: Custom error pages and secure logging practices.
 HTTPS: Encouraging deployment over HTTPS for secure communication.
+Application key:
+Why It's Important?
+Without a properly set application key, your application will not be able to securely encrypt and decrypt data. This can lead to various security vulnerabilities, such as:
+Insecure Data: Sensitive information stored in your database or cookies may not be properly protected.
+Tampered Sessions: User sessions might be vulnerable to tampering, allowing attackers to hijack sessions and impersonate users.
+Insecure Hashing: Hashes generated without a proper key may be easier to crack.
+In summary, the application key is a fundamental part of Laravel's security infrastructure, and it is crucial to generate and set this key when setting up your Laravel application.
 By implementing these security measures, the Task Management Application aims to protect user data and maintain the integrity and confidentiality of the application.
-## Conclusion
+** Conclusion**
 This README provides an overview of the Task Management application, including its structure, functionality, and instructions for setting up and running the project using Laragon. The project demonstrates essential CRUD operations with user authentication, following best practices and providing a clean, user-friendly interface.
 
