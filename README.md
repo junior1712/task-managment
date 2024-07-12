@@ -1,153 +1,128 @@
-Task Management Application
-## Project Overview 
-The Task Management Application is a small-scale web application built using Laravel 10. It focuses on essential CRUD (Create, Read, Update, Delete) operations for managing tasks, coupled with user authentication. Users can register, log in, and manage their tasks, including creating, reading, updating, and deleting tasks. The application ensures that users remain logged in across different pages and can securely log out when needed.
+# Task Management Application
 
-## Technical Details 
-Project Structure
-The project follows the standard Laravel framework structure, which includes controllers, models, views, and routes. Each component has a specific role:
+## Project Overview
 
-Controllers: Handle the logic of the application. For example, they process incoming requests, interact with the models, and return the appropriate responses.
-Models: Represent the data structure of the application. They interact with the database and manage the data of the application.
-Views: Present the data to the user. They are responsible for displaying the HTML content and user interfaces.
-Routes: Direct incoming requests to the appropriate controller methods. They define the URLs that the application responds to and map them to specific actions in the controllers.
-Database Schema
+The Task Management Application is a small-scale web application built using Laravel 10. It focuses on essential CRUD (Create, Read, Update, Delete) operations for managing tasks, coupled with user authentication.
+
+## Technical Details
+
+### Project Structure
+
+The project follows the standard Laravel framework structure, which includes:
+
+* Controllers: Handle the logic of the application.
+* Models: Represent the data structure of the application.
+* Views: Present the data to the user.
+* Routes: Direct incoming requests to the appropriate controller methods.
+
+### Database Schema
+
 The application uses a MySQL database with two main tables:
 
-Users Table: Stores user information such as user ID, name, email, password, and timestamps for when the user was created and last updated.
-Tasks Table: Stores task information such as task ID, user ID (to associate tasks with specific users), title, description, due date, status (e.g., pending, in-progress, completed), and timestamps for when the task was created and last updated.
-Controllers
+| Table Name | Description |
+| --- | --- |
+| Users | Stores user information such as user ID, name, email, password, and timestamps for when the user was created and last updated. |
+| Tasks | Stores task information such as task ID, user ID (to associate tasks with specific users), title, description, due date, status (e.g., pending, in-progress, completed), and timestamps for when the task was created and last updated. |
+
+### Controllers
+
 The application has several controllers:
 
-Authentication Controllers: Manage user registration, login, logout, and session management. These controllers ensure that users can create accounts, log in, stay logged in across different pages, and log out securely.
-Task Controller: Manages the CRUD operations for tasks. It includes methods to list tasks, show a single task, create a new task, update an existing task, and delete a task.
-Models
+* Authentication Controllers: Manage user registration, login, logout, and session management.
+* Task Controller: Manages the CRUD operations for tasks.
+
+### Models
+
 The application has two main models:
 
-User Model: Represents the users table in the database. It includes methods and properties related to user data.
-Task Model: Represents the tasks table in the database. It includes methods and properties related to task data. The Task model is associated with the User model, indicating that each task belongs to a specific user.
-Views
-Views are stored in the resources/views directory and include the following main views:
+* User Model: Represents the users table in the database.
+* Task Model: Represents the tasks table in the database.
 
-Task List View: Displays the list of tasks created by the user, with pagination to handle multiple tasks efficiently.
-Task Create View: Provides a form for users to create new tasks.
-Task Edit View: Provides a form for users to edit existing tasks.
-Routes
-Routes are defined in the routes/web.php file. They map URLs to specific actions in the controllers. For example, the root URL of the application might display the list of tasks, while other URLs are mapped to actions such as creating, editing, and deleting tasks.
+### Views
 
-Validation Rules
-Validation rules are implemented in the controller methods to ensure data integrity. For example, when creating or updating a task, the application checks that the title is provided, the description is not empty, the due date is a valid date, and the status is one of the allowed values (e.g., pending, in-progress, completed).
+Views are stored in the resources/views directory and include:
 
-## Running the Code 
-# Prerequisites
-The application was built using the following software:
-Laravel Framework: 10.48.15
-PHP Version: 8.1
-Laragon Version: 6.0
+* Task List View: Displays the list of tasks created by the user, with pagination to handle multiple tasks efficiently.
+* Task Create View: Provides a form for users to create new tasks.
+* Task Edit View: Provides a form for users to edit existing tasks.
 
-Here is a comprehensive list of dependencies required to run the  project on Laravel 10 with PHP 8.1, assuming a clean installation:
+### Routes
 
-1. PHP 8.1
+Routes are defined in the routes/web.php file and map URLs to specific actions in the controllers.
 
-Download and install PHP 8.1 from the official PHP website: https://www.php.net/downloads
-Make sure to select the appropriate version (e.g., PHP 8.1.x) and architecture (e.g., x64) for your system.
+### Validation Rules
 
-2. Composer
+Validation rules are implemented in the controller methods to ensure data integrity.
 
-Download and install Composer from the official Composer website: https://getcomposer.org/
-Follow the installation instructions for your operating system (Windows, macOS, or Linux)
+## Running the Code
 
-3. Laravel Installer
+### Prerequisites
 
-Open a terminal or command prompt and run the following command: composer global require laravel/installer
+The application was built using:
 
-4. Node.js and npm
+* Laravel Framework: 10.48.15
+* PHP Version: 8.1
+* Laragon Version: 6.0
+* Node.js v20.12.2
+* npm 10.5.2
 
-Download and install Node.js from the official Node.js website: https://nodejs.org/en/download/
-Make sure to select the appropriate version (e.g., Node.js 18.x) and architecture (e.g., x64) for your system
-npm (Node Package Manager) comes bundled with Node.js, so you don't need to install it separately
+### Dependencies
 
-5. MySQL or other database
+To run the project on Laravel 10 with PHP 8.1, install the following software ,assuming a clean installation:
 
-Download and install a database management system like MySQL, PostgreSQL, or SQLite
+* PHP 8.1
+* Composer
+* Laravel Installer
+* Node.js and npm 
+* MySQL or other database
+* Laragon (optional but recommended) Download and install Laragon from the official Laragon website: https://laragon.org/ ,
+* Laragon provides a convenient and easy-to-use development environment for PHP, MySQL, and other tools. 
+* Git (optional but recommended)
+* PHP Extensions: openssl, pdo_mysql (or your preferred database extension), tokenizer, xml, zip
 
-6. Laragon (optional but recommended)
-Download and install Laragon from the official Laragon website: https://laragon.org/
-Laragon provides a convenient and easy-to-use development environment for PHP, MySQL, and other tools.
+## Installation
 
-
-7. Git (optional but recommended)
-Download and install Git from the official Git website: https://git-scm.com/downloads
-Git is a version control system that allows you to manage code changes and collaborate with others.
-
-8. PHP Extensions
-Make sure the following PHP extensions are enabled:
-openssl
-pdo_mysql (or your preferred database extension)
-tokenizer
-xml
-zip
-
-9. Laravel 10
-Clone the Form project repository using git clone https://bitbucket.org/veer1712/form.git
-Switch to the project directory using cd form
-Install the dependencies using composer install
-After installing these dependencies, you should be able to run the Form project using php artisan serve
-Clone the repository: Download the project files from the repository.
-Install dependencies: Use Composer to install PHP dependencies and npm to install frontend dependencies.
-Environment setup: configure your database settings in .env file , including the database connection, host, port, database name, username, and password.
-Run database migrations: Execute the database migrations to create the necessary tables in your database using the command:php artisan migrate
-Serve the application: Use Laravel's built-in development server to run the application and access it in your browser.
+1. Clone the repository: `git clone https://github.com/junior1712/task-managment.git` and `cd task-managment`
+2. Install dependencies: `composer install` and `npm install`
+3. Copy the .env file in your project directory : `cp .env.example .env`
+4. Configure your database settings in the .env file 
+5. Run database migrations: `php artisan migrate`
+6. Run npm dev: `npm run dev`
+7. Generate an application key: `php artisan key:generate`
+8. Serve the application: `php artisan serve`
+9. Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000)
+10. Run npm dev: `npm run dev`
 
 ## Running the Application with Laragon on localhost
 
-Start Laragon: Launch Laragon and start the necessary services (e.g., Apache and MySQL).
-In laragon open the database and Create a new database with a name of your choice.
-Open the built-in terminal or the GUI in Laragon to run the Laravel development server,once the terminal open you will see the following path directory: C:\laragon\www
-Clone the repository in laragon terminal : C:\laragon\www 
-git clone https://github.com/junior1712/task-managment.git 
-,
-cd task-management-app
-.
-Ensure that your .env file is properly configured with your database. If you don't have a .env file in your project directory, create one by copying the .env.example file in the project directory using the command line below:
-cp .env.example .env
-,
-thi command will create .env file that will help you to config your database.
-update the DB_DATABASE variable in the .env file of the application with the name of the database you created.
-example:DB_DATABASE=task_managment if the database name created was task_managment.
-Install dependencies: Use Composer to install PHP dependencies and npm to install frontend dependencies:
-composer install
-npm install
-npm run dev
-
-Run database migrations: Execute the database migrations to create the necessary tables in your database using the command:
-php artisan migrate
-Make sure you have generated an application key by running the command line:
-php artisan key:generate
-Serve the application:Use Laravel's built-in development server to run the application and access it in your browser by using the command:php artisan serve
-Access the application: Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000).
-make sure to run again npm run dev after serving the application to be able to use frontend depencies with the registration form.
+1. Start Laragon and start the necessary services (e.g., Apache and MySQL).
+2. Create a new database with a name of your choice in laragon e.g.task_managment
+3. Open the built-in terminal in Laragon to run the Laravel development server e.g C:\laragon\www 
+4. Clone the repository in Laragon terminal C:\laragon\www : `git clone https://github.com/junior1712/task-managment.git` and `cd task-managment`
+5. Install dependencies: `composer install` and `npm install`
+6. Copy the .env file in your task-managment directory by running the command-line: `cp .env.example .env`
+7. Configure your database settings in the .env file e.g.DB_DATABASE=task_managment
+8. Run database migrations: `php artisan migrate`
+9. Run npm dev: `npm run dev`
+10. Generate an application key: `php artisan key:generate`
+11. Serve the application: `php artisan serve`
+11.Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000)
 
 ## Additional Features
-Pagination: The task list view includes pagination to efficiently handle multiple tasks and improve the user experience.
-AJAX: Used for enhancing user interactions, such as submitting forms without reloading the page.
-Responsive Design: The application is designed to work well on both desktop and mobile devices, ensuring a consistent user experience across different screen sizes.
+
+* Pagination: The task list view includes pagination to efficiently handle multiple tasks and improve the user experience.
+* AJAX: Used for enhancing user interactions, such as submitting forms without reloading the page.
+* Responsive Design: The application is designed to work well on both desktop and mobile devices, ensuring a consistent user experience across different screen sizes.
+
 ## Summary of Security Measures Implemented
-Authentication and Authorization: Secure user authentication and session management.
-Input Validation and Sanitization: Validating and sanitizing user inputs to prevent malicious data.
-CSRF Protection: Using CSRF tokens to prevent cross-site request forgery attacks.
-Password Hashing: Storing passwords securely using bcrypt hashing.
-Encryption: Encrypting sensitive data using a unique application key.
-Database Security: Using prepared statements and secure database migrations.
-Error Handling: Custom error pages and secure logging practices.
-HTTPS: Encouraging deployment over HTTPS for secure communication.
-Application key:
-Why It's Important?
-Without a properly set application key, your application will not be able to securely encrypt and decrypt data. This can lead to various security vulnerabilities, such as:
-Insecure Data: Sensitive information stored in your database or cookies may not be properly protected.
-Tampered Sessions: User sessions might be vulnerable to tampering, allowing attackers to hijack sessions and impersonate users.
-Insecure Hashing: Hashes generated without a proper key may be easier to crack.
-In summary, the application key is a fundamental part of Laravel's security infrastructure, and it is crucial to generate and set this key when setting up your Laravel application.
-By implementing these security measures, the Task Management Application aims to protect user data and maintain the integrity and confidentiality of the application.
-** Conclusion**
-This README provides an overview of the Task Management application, including its structure, functionality, and instructions for setting up and running the project using Laragon. The project demonstrates essential CRUD operations with user authentication, following best practices and providing a clean, user-friendly interface.
+
+* Authentication and Authorization: Secure user authentication and session management.
+* Input Validation and Sanitization: Validating and sanitizing user inputs to prevent malicious data.
+* CSRF Protection: Using CSRF tokens to prevent cross-site request forgery attacks.
+* Password Hashing: Storing passwords securely using bcrypt hashing.
+* Encryption: Encrypting sensitive data using a unique application key.
+* Database Security: Using prepared statements and secure database migrations.
+* Error Handling: Custom error pages and secure logging practices.
+* HTTPS: Encouraging deployment over HTTPS for secure communication.
+
 
