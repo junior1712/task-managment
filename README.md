@@ -96,17 +96,17 @@ To run the project on Laravel 10 with PHP 8.1, install the following software ,a
 ## Running the Application with Laragon on localhost
 
 1. Start Laragon and start the necessary services (e.g., Apache and MySQL).
-2. Create a new database with a name of your choice in laragon e.g.task_managment
-3. Open the built-in terminal in Laragon to run the Laravel development server e.g C:\laragon\www 
-4. Clone the repository in Laragon terminal C:\laragon\www : `git clone https://github.com/junior1712/task-managment.git` and `cd task-managment`
+2. Create a new database with a name of your choice in laragon (e.g., task_managment).
+3. Open the built-in terminal in Laragon to run the Laravel development server.
+4. Clone the repository in Laragon terminal (e.g., C:\laragon\www): `git clone https://github.com/junior1712/task-managment.git` and `cd task-managment`
 5. Install dependencies: `composer install` and `npm install`
 6. Copy the .env file in your task-managment directory by running the command-line: `cp .env.example .env`
-7. Configure your database settings in the .env file e.g.DB_DATABASE=task_managment
-8. Run database migrations: `php artisan migrate`
+7. Configure your database settings in the .env file (e.g., DB_DATABASE=task_managment).
+8. Run database migrations : `php artisan migrate`
 9. Run npm dev: `npm run dev`
 10. Generate an application key: `php artisan key:generate`
 11. Serve the application: `php artisan serve`
-11.Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000)
+12.Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000).
 
 ## Additional Features
 
