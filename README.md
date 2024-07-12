@@ -62,9 +62,8 @@ The application was built using:
 
 * Laravel Framework: 10.48.15
 * PHP Version: 8.1
-* Laragon Version: 6.0
-* Node.js v20.12.2
-* npm 10.5.2
+* Laragon Version: 6.0 with Node.js v20.12.2 and npm 10.5.2
+
 
 ### Dependencies
 
