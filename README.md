@@ -86,11 +86,12 @@ To run the project on Laravel 10 with PHP 8.1, install the following software ,a
 3. Copy the .env file in your project directory : `cp .env.example .env`
 4. Configure your database settings in the .env file 
 5. Run database migrations: `php artisan migrate`
-6. Run npm dev: `npm run dev`
-7. Generate an application key: `php artisan key:generate`
-8. Serve the application: `php artisan serve`
-9. Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000)
-10. Run npm dev: `npm run dev`
+6. Generate an application key: `php artisan key:generate`
+7. Run the development server for your web application by running the command: `npm run dev`
+8. Avoid running `npm run dev` and `php artisan serve` in the same terminal, as it can cause conflicts and errors. This is because `npm run dev` starts the development server for your web application, while `php artisan serve` initiates a local development server for the application. Running both commands simultaneously in the same terminal can lead to port conflicts and other issues. Instead, use separate terminals or a tool like concurrently to run them independently and avoid any conflicts.
+10. Serve the application: `php artisan serve` 
+11. Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000)
+
 
 ## Running the Application with Laragon on localhost
 
@@ -100,16 +101,16 @@ To run the project on Laravel 10 with PHP 8.1, install the following software ,a
 4. Clone the repository in Laragon terminal (e.g., C:\laragon\www): `git clone https://github.com/junior1712/task-managment.git` and `cd task-managment`
 5. Install dependencies: `composer install` and `npm install`
 6. Copy the .env file in your task-managment directory by running the command-line: `cp .env.example .env`
-7. Configure your database settings in the .env file (e.g., DB_DATABASE=task_managment).
-8. Run database migrations : `php artisan migrate`
-9. Run npm dev: `npm run dev`
-10. Generate an application key: `php artisan key:generate`
-11. Serve the application: `php artisan serve`
-12.Open your web browser and navigate to the provided local URL (e.g., http://localhost:8000).
+7. Open visual studio code:in laragon terminal run the command `code .` (e.g., C:\laragon\www\task-managment `code .`)
+8. Configure your database settings in the .env file (e.g., DB_DATABASE=task_managment) in visual studio code.
+9. Run database migrations in laragon terminal : `php artisan migrate`  (e.g., C:\laragon\www\task-managment `php artisan migrate` )
+10. Generate an application key in laragon terminal: `php artisan key:generate` (e.g., C:\laragon\www\task-managment `php artisan key:generate`)
+11.  run: `npm run dev` in largon terminal: (e.g., C:\laragon\www\task-managment `npm run dev`) and `run php artisan` in visual code terminal to serve the application serve.DO not run these two command on the same terminal,it will cause conflict and errors as they might use the same port or resources.. run: `npm run dev` in largon terminal and `run php artisan` in visual studio  code terminal.
+
 
 ## Additional Features
 
-* Pagination: The task list view includes pagination to efficiently handle multiple tasks and improve the user experience.
+* Pagination: The task list view includes pagination to efficiently handle multiple tasks and improve the user experience.pagination is set to display three tasks per page.
 * AJAX: Used for enhancing user interactions, such as submitting forms without reloading the page.
 * Responsive Design: The application is designed to work well on both desktop and mobile devices, ensuring a consistent user experience across different screen sizes.
 
