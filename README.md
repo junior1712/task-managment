@@ -124,5 +124,40 @@ To run the project on Laravel 10 with PHP 8.1, install the following software ,a
 * Database Security: Using prepared statements and secure database migrations.
 * Error Handling: Custom error pages and secure logging practices.
 * HTTPS: Encouraging deployment over HTTPS for secure communication.
+  
+## Accessing Laravel Task Management Application Code on Production using Cyberduck
+
+Live Application URL
+-------------------
+
+* The application is hosted live at <https://mdglobalt.com/taskManager/public/>
+
+Login Credentials to live Application URL
+----------------------------------------
+
+* Email: nsenga.ns1712@gmail.com
+* Password:12345678
+
+
+
+FTP Configuration
+----------------
+
+* **Hostname:** ftp.mdglobalt.com
+* **Username:** test@mdglobalt.com
+* **Password:** test@2024
+
+Steps to Access
+---------------
+0. Download and Install Cyberduck
+1. Open Cyberduck and click on "Open Connection" in the top left corner.
+2. Select "FTP (File Transfer Protocol)" as the protocol.
+3. Enter the hostname: `ftp.mdglobalt.com`
+4. Enter your username:test@mdglobalt.com and password:test@2024
+5. Click "Connect" to establish the connection.
+6. Once connected, navigate to the directory where the Laravel task management application is hosted.
+
+
+  
 
 
